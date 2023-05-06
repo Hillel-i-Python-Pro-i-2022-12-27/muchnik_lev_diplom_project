@@ -1,0 +1,61 @@
+{% load static %}
+<html lang="uk-UA">
+	<body>
+        <div class="top-mini-menu">
+          <a class="btn-mini-menu" href="#">О Компании</a>
+          <a class="btn-mini-menu" href="#">Сертификаты</a>
+        </div>
+
+    <div class="main-menu">
+      <img class="logo" src="{% static "/logo/logo.svg" %}" alt="site-logo"/>
+      <div class="dropdown">
+        <button class="dropbtn">Меню ▼</button>
+        <div class="dropdown-content">
+          <a href="#">Ссылка 1</a>
+          <a href="#">Ссылка 2</a>
+          <a href="#">Ссылка 3</a>
+        </div>
+      </div>
+      <a class="btn-menu" href="#">Наши работы</a>
+      <a class="btn-menu" href="#">Контакты</a>
+    </div>
+  <div class="background-container">
+    <div class="container-phone">
+      <div class="phone-number">+38 (050) 3473430</div>
+      <div class="icons">
+        <a href="#"><img src="{% static "/background/insta.png" %}" alt="Instagramm"></a>
+        <a href="#"><img src="{% static "/background/telega.png" %}" alt="Telegram"></a>
+        <a href="#"><img src="{% static "/background/viber.png" %}" alt="Viber"></a>
+      </div>
+    </div>
+
+    <div class="main-container">
+  <div class="description-container">
+    <h2>Краткое описание компании</h2>
+    <p>Здесь может быть ваше краткое описание компании.
+    </p>
+  </div>
+   <div class="my-colm1">
+<div class="form-container">
+  <h6>Получите бесплатную консультацию</h6>
+  <form method="POST" action="">
+    {% csrf_token %}
+    <label for="name">Ваше Имя*</label>
+    <input type="text" id="name" name="name" required>
+    <label for="phone">Ваш Номер*</label>
+    <input type="tel" id="phone" name="phone" required>
+    <label for="email">Ваша Почта</label>
+    <input type="email" id="email" name="email">
+    <button class="button-submin" type="submit">Отправить</button>
+  </form>
+  {% if success %}
+    <div class="success-message">Заявка принята!</div>
+  {% endif %}
+</div>
+
+   </div>>
+</div>
+  </div>
+</header>
+</body>
+</html>
